@@ -116,7 +116,7 @@ function Modal({ c, onClose, catColor }) {
           </a>
           <a href={`mailto:${c.email}`} style={{ display: "block", textAlign: "center", padding: "10px 0", borderRadius: 10, background: catColor, color: "#fff", fontWeight: 500, fontSize: 14, textDecoration: "none", marginTop: 8 }}>
             <i className="ti ti-mail" style={{ verticalAlign: "-2px", marginRight: 6 }} aria-hidden="true" />
-            voic CV
+            voir CV
           </a>
         </div>
       </div>
