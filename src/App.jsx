@@ -114,10 +114,23 @@ function Modal({ c, onClose, catColor }) {
             <i className="ti ti-mail" style={{ verticalAlign: "-2px", marginRight: 6 }} aria-hidden="true" />
             Contacter {c.name.split(" ")[0]}
           </a>
-          <a href={`mailto:${c.email}`} style={{ display: "block", textAlign: "center", padding: "10px 0", borderRadius: 10, background: catColor, color: "#fff", fontWeight: 500, fontSize: 14, textDecoration: "none", marginTop: 8 }}>
-            <i className="ti ti-mail" style={{ verticalAlign: "-2px", marginRight: 6 }} aria-hidden="true" />
-            voir CV
-          </a>
+          <button
+    onClick={() => alert("CV de " + c.name)}
+    style={{
+      display: "block",
+      textAlign: "center",
+      padding: "10px 0",
+      borderRadius: 10,
+      background: "transparent",
+      border: `1px solid ${catColor}`,
+      color: catColor,
+      fontWeight: 500,
+      fontSize: 14,
+      cursor: "pointer"
+    }}
+  >
+    Voir CV
+  </button>
         </div>
       </div>
     </div>
