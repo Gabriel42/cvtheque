@@ -33,8 +33,8 @@ const INITIAL_CANDIDATES = [
     email: "borgniet.franck@ikmail.com",
     avatar: "FB",
     category: "support",
-    cvUrl: "/pdfs/Franck CV Master.pdf",
-    pitchUrl: "/pdfs/Franck Pitch.pdf",
+    cvUrl: "/pdfs/Franck_CV_Master.pdf",
+    pitchUrl: "/pdfs/Franck_Pitch.pdf",
   },
   {
     id: 12,
@@ -48,8 +48,8 @@ const INITIAL_CANDIDATES = [
     email: "christinechastel@free.fr",
     avatar: "CC",
     category: "commerce",
-    cvUrl: "/pdfs/Christine CV master.pdf",
-    pitchUrl: "/pdfs/Christine pitch.pdf",
+    cvUrl: "/pdfs/Christine_CV_master.pdf",
+    pitchUrl: "/pdfs/Christine_pitch.pdf",
   },
 ];
 
@@ -173,25 +173,14 @@ function Modal({ c, onClose, catColor }) {
             <p style={{ fontSize: 11, color: "var(--color-text-tertiary)", margin: "0 0 4px", textTransform: "uppercase", letterSpacing: 0.8 }}>Contact</p>
             <p style={{ fontSize: 14, color: "var(--color-text-secondary)", margin: 0 }}>{c.email}</p>
           </div>
-          {(c.cvUrl || c.pitchUrl) && (
+          {c.cvUrl && (
             <div>
-              <p style={{ fontSize: 11, color: "var(--color-text-tertiary)", margin: "0 0 8px", textTransform: "uppercase", letterSpacing: 0.8 }}>Documents</p>
-              <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                {c.cvUrl && (
-                  <a href={c.cvUrl} target="_blank" rel="noopener noreferrer"
-                    style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "7px 14px", borderRadius: 10, border: `1px solid ${catColor}55`, background: `${catColor}10`, color: catColor, fontSize: 13, fontWeight: 500, textDecoration: "none" }}>
-                    <i className="ti ti-file-cv" style={{ fontSize: 15 }} aria-hidden="true" />
-                    CV complet
-                  </a>
-                )}
-                {c.pitchUrl && (
-                  <a href={c.pitchUrl} target="_blank" rel="noopener noreferrer"
-                    style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "7px 14px", borderRadius: 10, border: `1px solid ${catColor}55`, background: `${catColor}10`, color: catColor, fontSize: 13, fontWeight: 500, textDecoration: "none" }}>
-                    <i className="ti ti-presentation" style={{ fontSize: 15 }} aria-hidden="true" />
-                    Pitch
-                  </a>
-                )}
-              </div>
+              <p style={{ fontSize: 11, color: "var(--color-text-tertiary)", margin: "0 0 8px", textTransform: "uppercase", letterSpacing: 0.8 }}>Document</p>
+              <a href={c.cvUrl} target="_blank" rel="noopener noreferrer"
+                style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "7px 14px", borderRadius: 10, border: `1px solid ${catColor}55`, background: `${catColor}10`, color: catColor, fontSize: 13, fontWeight: 500, textDecoration: "none" }}>
+                <i className="ti ti-file-cv" style={{ fontSize: 15 }} aria-hidden="true" />
+                CV complet
+              </a>
             </div>
           )}
           <a href={`mailto:${c.email}`} style={{ display: "block", textAlign: "center", padding: "10px 0", borderRadius: 10, background: catColor, color: "#fff", fontWeight: 500, fontSize: 14, textDecoration: "none", marginTop: 4 }}>
