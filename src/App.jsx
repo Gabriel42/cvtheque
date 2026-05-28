@@ -33,7 +33,7 @@ const INITIAL_CANDIDATES = [
     email: "borgniet.franck@ikmail.com",
     avatar: "FB",
     category: "support",
-    cvUrl: "/pdfs/Franck_CV_Master.pdf",
+    cvUrl: "/pdfs/Franck CV Master.pdf",
     pitchUrl: "/pdfs/Franck_Pitch.pdf",
   },
   {
@@ -48,7 +48,7 @@ const INITIAL_CANDIDATES = [
     email: "christinechastel@free.fr",
     avatar: "CC",
     category: "commerce",
-    cvUrl: "/pdfs/Christine_CV_master.pdf",
+    cvUrl: "/pdfs/Christine CV master.pdf",
     pitchUrl: "/pdfs/Christine_pitch.pdf",
   },
 ];
