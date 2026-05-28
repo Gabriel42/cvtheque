@@ -11,16 +11,46 @@ const CATEGORIES = [
 ];
 
 const INITIAL_CANDIDATES = [
-  { id: 1, name: "Camille Renard", title: "Développeuse Full Stack", city: "Paris", experience: 5, skills: ["React", "Node.js", "PostgreSQL"], available: true, summary: "5 ans d'expérience en développement web, spécialisée en architecture React et API REST.", email: "c.renard@mail.com", avatar: "CR", category: "informatique" },
-  { id: 2, name: "Thomas Mercier", title: "Data Scientist", city: "Lyon", experience: 3, skills: ["Python", "TensorFlow", "SQL"], available: true, summary: "Passionné de machine learning, j'ai contribué à plusieurs projets de NLP et computer vision.", email: "t.mercier@mail.com", avatar: "TM", category: "it" },
-  { id: 3, name: "Sofia El Amrani", title: "UX / Product Designer", city: "Bordeaux", experience: 7, skills: ["Figma", "Design System", "Prototypage"], available: false, summary: "Experte en design centré utilisateur, j'ai travaillé pour des startups et grands groupes.", email: "s.elamrani@mail.com", avatar: "SE", category: "informatique" },
-  { id: 4, name: "Jules Fontaine", title: "DevOps Engineer", city: "Paris", experience: 4, skills: ["Docker", "Kubernetes", "CI/CD"], available: true, summary: "Infrastructure cloud et automatisation de déploiements, certifié AWS et GCP.", email: "j.fontaine@mail.com", avatar: "JF", category: "it" },
-  { id: 5, name: "Inès Marchand", title: "Cheffe de Projet", city: "Nantes", experience: 8, skills: ["Agile", "Jira", "Gestion d'équipe"], available: true, summary: "Pilotage de projets complexes, coordination d'équipes pluridisciplinaires.", email: "i.marchand@mail.com", avatar: "IM", category: "support" },
-  { id: 6, name: "Romain Bouchard", title: "Développeur Mobile", city: "Toulouse", experience: 2, skills: ["Flutter", "Swift", "Firebase"], available: false, summary: "Junior motivé, j'ai déjà publié 3 applications sur l'App Store et le Play Store.", email: "r.bouchard@mail.com", avatar: "RB", category: "informatique" },
-  { id: 7, name: "Léa Dupuis", title: "Conseillère Bancaire", city: "Paris", experience: 6, skills: ["Gestion de portefeuille", "Crédit", "Assurance-vie"], available: true, summary: "Expérience solide en banque de détail, spécialisée en gestion patrimoniale.", email: "l.dupuis@mail.com", avatar: "LD", category: "banque" },
-  { id: 8, name: "Marc Lévêque", title: "Ingénieur Industriel", city: "Strasbourg", experience: 10, skills: ["Lean", "Six Sigma", "Gestion de production"], available: true, summary: "Expert en optimisation de lignes de production dans le secteur automobile.", email: "m.leveque@mail.com", avatar: "ML", category: "industrie" },
-  { id: 9, name: "Anaïs Petit", title: "Responsable Commercial", city: "Bordeaux", experience: 5, skills: ["Négociation", "CRM", "B2B"], available: false, summary: "Développement de portefeuille clients grands comptes, secteur FMCG.", email: "a.petit@mail.com", avatar: "AP", category: "commerce" },
-  { id: 10, name: "Hugo Brun", title: "Conducteur de Travaux", city: "Lyon", experience: 7, skills: ["Gestion chantier", "AutoCAD", "Normes NF"], available: true, summary: "Pilotage de chantiers gros œuvre et second œuvre, jusqu'à 15M€.", email: "h.brun@mail.com", avatar: "HB", category: "btp" },
+  { id: 1, name: "Camille Renard", title: "Développeuse Full Stack", city: "Paris", experience: 5, skills: ["React", "Node.js", "PostgreSQL"], available: true, summary: "5 ans d'expérience en développement web, spécialisée en architecture React et API REST.", email: "c.renard@mail.com", avatar: "CR", category: "informatique", cvUrl: null, pitchUrl: null },
+  { id: 2, name: "Thomas Mercier", title: "Data Scientist", city: "Lyon", experience: 3, skills: ["Python", "TensorFlow", "SQL"], available: true, summary: "Passionné de machine learning, j'ai contribué à plusieurs projets de NLP et computer vision.", email: "t.mercier@mail.com", avatar: "TM", category: "it", cvUrl: null, pitchUrl: null },
+  { id: 3, name: "Sofia El Amrani", title: "UX / Product Designer", city: "Bordeaux", experience: 7, skills: ["Figma", "Design System", "Prototypage"], available: false, summary: "Experte en design centré utilisateur, j'ai travaillé pour des startups et grands groupes.", email: "s.elamrani@mail.com", avatar: "SE", category: "informatique", cvUrl: null, pitchUrl: null },
+  { id: 4, name: "Jules Fontaine", title: "DevOps Engineer", city: "Paris", experience: 4, skills: ["Docker", "Kubernetes", "CI/CD"], available: true, summary: "Infrastructure cloud et automatisation de déploiements, certifié AWS et GCP.", email: "j.fontaine@mail.com", avatar: "JF", category: "it", cvUrl: null, pitchUrl: null },
+  { id: 5, name: "Inès Marchand", title: "Cheffe de Projet", city: "Nantes", experience: 8, skills: ["Agile", "Jira", "Gestion d'équipe"], available: true, summary: "Pilotage de projets complexes, coordination d'équipes pluridisciplinaires.", email: "i.marchand@mail.com", avatar: "IM", category: "support", cvUrl: null, pitchUrl: null },
+  { id: 6, name: "Romain Bouchard", title: "Développeur Mobile", city: "Toulouse", experience: 2, skills: ["Flutter", "Swift", "Firebase"], available: false, summary: "Junior motivé, j'ai déjà publié 3 applications sur l'App Store et le Play Store.", email: "r.bouchard@mail.com", avatar: "RB", category: "informatique", cvUrl: null, pitchUrl: null },
+  { id: 7, name: "Léa Dupuis", title: "Conseillère Bancaire", city: "Paris", experience: 6, skills: ["Gestion de portefeuille", "Crédit", "Assurance-vie"], available: true, summary: "Expérience solide en banque de détail, spécialisée en gestion patrimoniale.", email: "l.dupuis@mail.com", avatar: "LD", category: "banque", cvUrl: null, pitchUrl: null },
+  { id: 8, name: "Marc Lévêque", title: "Ingénieur Industriel", city: "Strasbourg", experience: 10, skills: ["Lean", "Six Sigma", "Gestion de production"], available: true, summary: "Expert en optimisation de lignes de production dans le secteur automobile.", email: "m.leveque@mail.com", avatar: "ML", category: "industrie", cvUrl: null, pitchUrl: null },
+  { id: 9, name: "Anaïs Petit", title: "Responsable Commercial", city: "Bordeaux", experience: 5, skills: ["Négociation", "CRM", "B2B"], available: false, summary: "Développement de portefeuille clients grands comptes, secteur FMCG.", email: "a.petit@mail.com", avatar: "AP", category: "commerce", cvUrl: null, pitchUrl: null },
+  { id: 10, name: "Hugo Brun", title: "Conducteur de Travaux", city: "Lyon", experience: 7, skills: ["Gestion chantier", "AutoCAD", "Normes NF"], available: true, summary: "Pilotage de chantiers gros œuvre et second œuvre, jusqu'à 15M€.", email: "h.brun@mail.com", avatar: "HB", category: "btp", cvUrl: null, pitchUrl: null },
+  {
+    id: 11,
+    name: "Franck Borgniet",
+    title: "Secrétaire Général | DAF Groupe | DGA Finance & Risques | Chief of Staff",
+    city: "Montbonnot-Saint-Martin",
+    experience: 23,
+    skills: ["Gouvernance", "Finance de groupe", "Transformation", "Strategic PMO", "ERP", "Solvabilité II", "Management transverse", "Contrôle interne"],
+    available: true,
+    summary: "Mon ADN professionnel, c'est d'être le dirigeant qui relie la stratégie, les moyens et l'exécution. Mon point fort naturel est de prendre de la hauteur : voir l'ensemble du système, changer l'axe d'analyse, challenger les solutions évidentes, puis transformer cette lecture globale en décisions concrètes et en plan d'action.\n\nJe suis particulièrement utile dans une entreprise qui grandit, se transforme ou se réorganise. J'interviens efficacement lorsque les sujets sont imbriqués — financiers, opérationnels, humains, réglementaires, SI ou gouvernance — et qu'il faut remettre de la clarté, du sens et de l'alignement.\n\nConcrètement, je peux prendre en main un pilotage financier, remettre à plat un reporting, structurer un CODIR, animer un Conseil d'Administration, sécuriser un programme d'investissement, fiabiliser un ERP ou un dispositif data, clarifier les responsabilités, piloter une intégration de filiale ou remettre sous contrôle un portefeuille de projets.\n\nJe le démontre par un parcours de Secrétaire Général, DAF Groupe et Directeur Technique et Financier : pilotage de 50 collaborateurs, structuration d'un PMT à 10 ans, sécurisation d'environ 100 M€ d'investissements annuels, gestion de 120 M€ d'actifs financiers, création d'une foncière de 30 M€, intégration de deux filiales, déploiement ERP et redressement d'un résultat de -0,5 M€ à +2 M€ en trois ans.",
+    email: "borgniet.franck@ikmail.com",
+    avatar: "FB",
+    category: "support",
+    cvUrl: "/pdfs/Franck_CV_Master.pdf",
+    pitchUrl: "/pdfs/Franck_Pitch.pdf",
+  },
+  {
+    id: 12,
+    name: "Christine Chastel",
+    title: "Directrice Commerciale | Grands Comptes | B2B International",
+    city: "Grenoble",
+    experience: 25,
+    skills: ["Développement commercial B2B", "Grands Comptes", "Négociation", "Marketing international", "Management multiculturel", "RSE", "Salesforce", "ERP"],
+    available: true,
+    summary: "Mon ADN professionnel, c'est développer des marchés B2B internationaux et transformer des clients stratégiques en partenaires durables. Ce qui me distingue : je perçois naturellement la globalité d'une situation — marchés, organisation, enjeux humains — avant d'agir. Je sais prendre du recul là où d'autres s'enferment dans l'exécution, changer l'axe d'analyse quand une approche ne produit plus de résultats, et challenger les solutions en place sans dogmatisme.\n\nJe suis particulièrement utile quand une entreprise veut accélérer sa croissance internationale, repositionner son approche grands comptes, ou sortir d'une organisation commerciale qui tourne en rond. Je suis également l'interlocutrice idéale pour les entreprises qui cherchent à intégrer une dimension RSE ou éco-conception dans leur offre commerciale.\n\nDès les premiers mois, j'audite le portefeuille clients, j'identifie les leviers de croissance inexploités et je structure un plan d'actions avec des KPIs lisibles. Je n'impose pas, j'aligne. Je donne du sens aux équipes avant de leur donner des objectifs.\n\nJe le démontre par des faits : 30 M€ de CA grands comptes en 2022 avec +35% de précision des prévisions, rentabilité portefeuille doublée chez Rhodia de 8% à 13%, trois ans de certification EcoVadis Platine sur trois continents. Vingt-cinq ans de résultats, zéro poste sans livrables chiffrés.",
+    email: "christinechastel@free.fr",
+    avatar: "CC",
+    category: "commerce",
+    cvUrl: "/pdfs/Christine_CV_master.pdf",
+    pitchUrl: "/pdfs/Christine_pitch.pdf",
+  },
 ];
 
 const COLORS_MAP = ["#4F46E5", "#0891B2", "#059669", "#D97706", "#DC2626", "#7C3AED", "#DB2777", "#065F46"];
@@ -127,7 +157,9 @@ function Modal({ c, onClose, catColor }) {
         <div style={{ borderTop: "0.5px solid var(--color-border-tertiary)", paddingTop: "1rem", display: "flex", flexDirection: "column", gap: 16 }}>
           <div>
             <p style={{ fontSize: 11, color: "var(--color-text-tertiary)", margin: "0 0 4px", textTransform: "uppercase", letterSpacing: 0.8 }}>Résumé</p>
-            <p style={{ fontSize: 14, color: "var(--color-text-primary)", margin: 0, lineHeight: 1.7 }}>{c.summary}</p>
+            {c.summary.split("\n\n").map((para, i) => (
+              <p key={i} style={{ fontSize: 14, color: "var(--color-text-primary)", margin: i === 0 ? 0 : "10px 0 0", lineHeight: 1.7 }}>{para}</p>
+            ))}
           </div>
           <div style={{ display: "flex", gap: 24 }}>
             <div><p style={{ fontSize: 11, color: "var(--color-text-tertiary)", margin: "0 0 4px", textTransform: "uppercase", letterSpacing: 0.8 }}>Ville</p><p style={{ fontSize: 14, fontWeight: 500, color: "var(--color-text-primary)", margin: 0 }}>{c.city}</p></div>
@@ -141,7 +173,28 @@ function Modal({ c, onClose, catColor }) {
             <p style={{ fontSize: 11, color: "var(--color-text-tertiary)", margin: "0 0 4px", textTransform: "uppercase", letterSpacing: 0.8 }}>Contact</p>
             <p style={{ fontSize: 14, color: "var(--color-text-secondary)", margin: 0 }}>{c.email}</p>
           </div>
-          <a href={`mailto:${c.email}`} style={{ display: "block", textAlign: "center", padding: "10px 0", borderRadius: 10, background: catColor, color: "#fff", fontWeight: 500, fontSize: 14, textDecoration: "none", marginTop: 8 }}>
+          {(c.cvUrl || c.pitchUrl) && (
+            <div>
+              <p style={{ fontSize: 11, color: "var(--color-text-tertiary)", margin: "0 0 8px", textTransform: "uppercase", letterSpacing: 0.8 }}>Documents</p>
+              <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                {c.cvUrl && (
+                  <a href={c.cvUrl} target="_blank" rel="noopener noreferrer"
+                    style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "7px 14px", borderRadius: 10, border: `1px solid ${catColor}55`, background: `${catColor}10`, color: catColor, fontSize: 13, fontWeight: 500, textDecoration: "none" }}>
+                    <i className="ti ti-file-cv" style={{ fontSize: 15 }} aria-hidden="true" />
+                    CV complet
+                  </a>
+                )}
+                {c.pitchUrl && (
+                  <a href={c.pitchUrl} target="_blank" rel="noopener noreferrer"
+                    style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "7px 14px", borderRadius: 10, border: `1px solid ${catColor}55`, background: `${catColor}10`, color: catColor, fontSize: 13, fontWeight: 500, textDecoration: "none" }}>
+                    <i className="ti ti-presentation" style={{ fontSize: 15 }} aria-hidden="true" />
+                    Pitch
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
+          <a href={`mailto:${c.email}`} style={{ display: "block", textAlign: "center", padding: "10px 0", borderRadius: 10, background: catColor, color: "#fff", fontWeight: 500, fontSize: 14, textDecoration: "none", marginTop: 4 }}>
             <i className="ti ti-mail" style={{ verticalAlign: "-2px", marginRight: 6 }} aria-hidden="true" />
             Contacter {c.name.split(" ")[0]}
           </a>
